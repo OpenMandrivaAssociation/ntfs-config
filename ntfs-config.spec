@@ -1,20 +1,20 @@
 Summary:	Enable/disable write support for internal and/or external NTFS device via a friendly gui
 Name:		ntfs-config
-Version:	0.5.5
-Release:	%mkrel 2
+Version:	1.0.1
+Release:	%mkrel 1
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Source0:	http://flomertens.free.fr/ntfs-config/download/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 URL:		http://flomertens.free.fr/ntfs-config/
-BuildRequires:  gtk2-devel
-BuildRequires:  libglade2.0-devel
-BuildRequires:  hal-devel
+BuildRequires:  pygtk2.0-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  perl-XML-Parser
+BuildRequires:  usermode
 Requires:	ntfs-3g
-Requires:	gksu
-
+Requires:       gksu
+Requires:	pygtk2.0-libglade
+Requires:       usermode
 %description
 This program will allow you to easily configure all of your NTFS devices to allow write support.
 For that use, it will configure them to use the ntfs-3g
@@ -57,10 +57,13 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-, root, root)
 %doc AUTHORS COPYING ChangeLog NEWS README
+%config(noreplace) %_sysconfdir/pam.d/ntfs-config-root
+%config(noreplace) %_sysconfdir/security/console.apps/ntfs-config-root
 %{_bindir}/%{name}
+%_sbindir/ntfs-config-root
 %{_datadir}/applications/*.desktop
-%{_mandir}/man8/%{name}.8.bz2
+%{_mandir}/man8/*
 %{_datadir}/%{name}/*
-
+%py_platsitedir/NtfsConfig
 
 
