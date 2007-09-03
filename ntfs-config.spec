@@ -1,7 +1,7 @@
 Summary:	Enable/disable write support for internal and/or external NTFS device via a friendly gui
 Name:		ntfs-config
 Version:	1.0.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Source0:	http://flomertens.free.fr/ntfs-config/download/%{name}-%{version}.tar.bz2
@@ -12,7 +12,6 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  perl-XML-Parser
 BuildRequires:  usermode
 Requires:	ntfs-3g
-Requires:       gksu
 Requires:	pygtk2.0-libglade
 Requires:       usermode
 %description
@@ -38,9 +37,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name} --with-gnome
 
+# we provide our own consolehelper file
+rm -rf $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/ntfs-config-root
+cat > $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/ntfs-config-root <<EOF
+#%PAM-1.0
+auth       sufficient   pam_rootok.so
+auth       required     pam_console.so
+auth       include      system-auth
+account    required     pam_permit.so
+session    optional     pam_xauth.so
+EOF
+
 desktop-file-install --vendor="" \
   --remove-category="Application" \
-  --add-category="X-MandrivaLinux-System-Configuration-Hardware" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %post
