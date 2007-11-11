@@ -10,6 +10,7 @@ URL:		http://flomertens.free.fr/ntfs-config/
 BuildRequires:  pygtk2.0-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  perl-XML-Parser
+BuildRequires:  usermode
 Requires:	ntfs-3g
 Requires:	pygtk2.0-libglade
 Requires:       usermode
