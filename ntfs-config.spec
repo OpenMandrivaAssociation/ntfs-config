@@ -5,6 +5,7 @@ Release:	%mkrel 3
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Source0:	http://flomertens.free.fr/ntfs-config/download/%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 URL:		http://flomertens.free.fr/ntfs-config/
 BuildRequires:  pygtk2.0-devel
 BuildRequires:  desktop-file-utils
