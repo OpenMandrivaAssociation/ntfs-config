@@ -15,8 +15,8 @@ Requires:	ntfs-3g
 Requires:	pygtk2.0-libglade
 Requires:       usermode
 %description
-This program will allow you to easily configure all of your NTFS devices to allow write support.
-For that use, it will configure them to use the ntfs-3g
+This program will allow you to easily configure all of your NTFS devices to
+allow write support.  For that use, it will configure them to use the ntfs-3g
 driver. You'll also be able to easily disable this feature.
 
 For more information about ntfs-3g : http://www.ntfs-3g.org
