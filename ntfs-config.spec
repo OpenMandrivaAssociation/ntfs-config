@@ -55,11 +55,15 @@ desktop-file-install --vendor="" \
 #Fix missing consolehelper link
 ln -sf consolehelper $RPM_BUILD_ROOT%{_bindir}/%{name}-root
 
+%if %mdkversion < 200900
 %post
 %update_menus
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 
 
