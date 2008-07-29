@@ -1,7 +1,7 @@
 Summary:	Enable/disable write support for internal and/or external NTFS device via a friendly gui
 Name:		ntfs-config
 Version:	1.0.1
-Release:	%mkrel 3
+Release:	%mkrel 5
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Source0:	http://flomertens.free.fr/ntfs-config/download/%{name}-%{version}.tar.bz2
