@@ -5,6 +5,7 @@ Release:	%mkrel 5
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Source0:	http://flomertens.free.fr/ntfs-config/download/%{name}-%{version}.tar.bz2
+Patch0:		ntfs-config-1.0.1-python2.6.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 URL:		http://flomertens.free.fr/ntfs-config/
 BuildRequires:  pygtk2.0-devel
@@ -23,11 +24,11 @@ For more information about ntfs-3g : http://www.ntfs-3g.org
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
-
-%configure
-
+autoconf
+%configure2_5x
 %make
 
 %install
