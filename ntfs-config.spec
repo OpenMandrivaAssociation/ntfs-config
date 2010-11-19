@@ -5,7 +5,7 @@ Release:	%mkrel 6
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Source0:	http://flomertens.free.fr/ntfs-config/download/%{name}-%{version}.tar.bz2
-Patch0:		ntfs-config-1.0.1-python2.6.patch
+Patch0:		ntfs-config-1.0.1-python2.7.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 URL:		http://flomertens.free.fr/ntfs-config/
 BuildRequires:  pygtk2.0-devel
@@ -15,6 +15,7 @@ BuildRequires:  usermode
 Requires:	ntfs-3g
 Requires:	pygtk2.0-libglade
 Requires:       usermode
+
 %description
 This program will allow you to easily configure all of your NTFS devices to
 allow write support.  For that use, it will configure them to use the ntfs-3g
