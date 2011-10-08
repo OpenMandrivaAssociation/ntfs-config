@@ -1,11 +1,13 @@
 Summary:	Enable/disable write support for internal and/or external NTFS device via a friendly gui
 Name:		ntfs-config
 Version:	1.0.1
-Release:	%mkrel 6
+Release:	%mkrel 7
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Source0:	http://flomertens.free.fr/ntfs-config/download/%{name}-%{version}.tar.bz2
 Patch0:		ntfs-config-1.0.1-python2.7.patch
+#add propertly ru translation
+Patch1:		ntfs-config-1.0.1-ru.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 URL:		http://flomertens.free.fr/ntfs-config/
 BuildRequires:  pygtk2.0-devel
@@ -26,6 +28,7 @@ For more information about ntfs-3g : http://www.ntfs-3g.org
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p1
 
 %build
 autoconf
