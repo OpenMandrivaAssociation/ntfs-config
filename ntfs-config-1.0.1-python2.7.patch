@@ -1,0 +1,11 @@
+--- configure.in~	2007-07-16 17:34:09.000000000 +0200
++++ configure.in	2009-01-10 05:49:33.000000000 +0100
+@@ -36,7 +36,7 @@
+ AC_PROG_INTLTOOL
+ 
+ # Check for python > 2.4 and pygtk > 2.6
+-AM_PATH_PYTHON_VERSION(2.4, 2.4.0, 2.5, 2.5.0)
++AM_PATH_PYTHON_VERSION(2.4, 2.4.0, 2.5, 2.5.0, 2.6, 2.6.0, 2.7, 2.7.0)
+ AC_DEFUN([required_pygtk_version], [2.6.0])
+ AC_SUBST([PYOPTIONS], [-OOt])
+ AC_MSG_CHECKING(for pygtk >= required_pygtk_version installed)
