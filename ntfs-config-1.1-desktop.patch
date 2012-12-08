@@ -1,0 +1,22 @@
+--- a/data/ntfs-config.desktop.in	2011-01-20 22:22:07.000000000 +0300
++++ b/data/ntfs-config.desktop.in	2012-11-27 16:37:08.958934557 +0400
+@@ -3,7 +3,7 @@
+ _Name=NTFS Configuration Tool
+ _Comment=Enable/disable write support for NTFS with a simple click.
+ Icon=gnome-dev-harddisk
+-Exec==su-to-root -X -c /usr/local/sbin/ntfs-config
++Exec==gksu /usr/sbin/ntfs-config
+ Terminal=false
+ Type=Application
+ Categories=Application;System;Settings
+--- a/data/ntfs-config.desktop.in.in	2011-01-10 22:24:46.000000000 +0300
++++ b/data/ntfs-config.desktop.in.in	2012-11-27 16:37:00.753928377 +0400
+@@ -3,7 +3,7 @@
+ _Name=NTFS Configuration Tool
+ _Comment=Enable/disable write support for NTFS with a simple click.
+ Icon=gnome-dev-harddisk
+-Exec==@SUHANDLER@ @prefix@/sbin/ntfs-config
++Exec=gksu /usr/sbin/ntfs-config
+ Terminal=false
+ Type=Application
+ Categories=Application;System;Settings
