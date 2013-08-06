@@ -7,18 +7,18 @@ Version:	1.1
 Release:	4
 License: 	GPL
 Group:  	Graphical desktop/GNOME
+Url:		http://flomertens.free.fr/ntfs-config/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		ntfs-config-1.1-desktop.patch
-URL:		http://flomertens.free.fr/ntfs-config/
-BuildRequires:  pygtk2.0-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:	intltool
 BuildRequires:  perl-XML-Parser
 BuildRequires:  usermode
-BuildRequires:	intltool
+BuildRequires:  pkgconfig(pygtk-2.0)
+Requires:	gksu
 Requires:	ntfs-3g
 Requires:	pygtk2.0-libglade
 Requires:       usermode
-Requires:	gksu
 
 %description
 This program will allow you to easily configure all of your NTFS devices to
@@ -33,14 +33,13 @@ For more information about ntfs-3g : http://www.ntfs-3g.org
 
 #fix ru
 rm -f po/ru.mo
+autoconf
 
 %build
-autoconf
 %configure2_5x
 %make
 
 %install
-
 %makeinstall_std
 
 #For compartibles without HAL
@@ -53,7 +52,8 @@ echo "This directory need for ntfs-config. Not remove!" > %{buildroot}%{_sysconf
 %doc AUTHORS COPYING ChangeLog NEWS README
 %{_sbindir}/%{name}
 %{_datadir}/applications/*.desktop
-%{_mandir}/man8/*
 %{_datadir}/%{name}/*
-%py_platsitedir/NtfsConfig
+%{_mandir}/man8/*
+%{py_platsitedir}/NtfsConfig
 %{_sysconfdir}/hal/fdi/policy/README
+
