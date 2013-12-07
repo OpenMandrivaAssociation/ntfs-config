@@ -4,7 +4,7 @@
 Summary:	GUI tool to enable/disable write support for NTFS device
 Name:		ntfs-config
 Version:	1.1
-Release:	4
+Release:	5
 License: 	GPL
 Group:  	Graphical desktop/GNOME
 Url:		http://flomertens.free.fr/ntfs-config/
