@@ -15,6 +15,7 @@ BuildRequires:	intltool
 BuildRequires:  perl-XML-Parser
 BuildRequires:  usermode
 BuildRequires:  pkgconfig(pygtk-2.0)
+BuildRequires:	pkgconfig(python2)
 Requires:	gksu
 Requires:	ntfs-3g
 Requires:	pygtk2.0-libglade
@@ -36,7 +37,8 @@ rm -f po/ru.mo
 autoconf
 
 %build
-%configure2_5x
+export PYTHON=%__python2
+%configure
 %make
 
 %install
@@ -54,6 +56,6 @@ echo "This directory need for ntfs-config. Not remove!" > %{buildroot}%{_sysconf
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}/*
 %{_mandir}/man8/*
-%{py_platsitedir}/NtfsConfig
+%{py2_platsitedir}/NtfsConfig
 %{_sysconfdir}/hal/fdi/policy/README
 
