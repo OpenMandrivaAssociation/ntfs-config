@@ -30,7 +30,7 @@ For more information about ntfs-3g : http://www.ntfs-3g.org
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 #fix ru
 rm -f po/ru.mo
