@@ -7,7 +7,7 @@ Version:	1.1
 Release:	10
 License: 	GPL
 Group:  	Graphical desktop/GNOME
-Url:		http://flomertens.free.fr/ntfs-config/
+Url:		https://flomertens.free.fr/ntfs-config/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		ntfs-config-1.1-desktop.patch
 BuildRequires:  desktop-file-utils
